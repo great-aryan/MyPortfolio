@@ -456,6 +456,14 @@ img {
 }
 
 /*==================== CONTACT ME ====================*/
+.box{
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-bottom: 1%;
+  padding-top: 1%;
+  border: 1px solid #6e6e6e;
+    border-radius: 10dp;
+}
 .contact__container a i{
   margin-left: 5px;
 }

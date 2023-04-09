@@ -68,12 +68,12 @@ var typewriter = new Typewriter(app, {
     loop: true
 });
 
-typewriter.typeString('Fullstack Developer')
-    .pauseFor(2500)
-    .deleteAll()
-    .typeString('Java Enthusiast')
-    .pauseFor(2500)
+typewriter.typeString('Frontend Developer')
+    .pauseFor(2000)
+    .deleteAll(7)
+    .typeString('Backend Developer')
+    .pauseFor(1500)
     .deleteAll(7)
     .typeString('Music Producer')
-    .pauseFor(2500)
+    .pauseFor(1000)
     .start();
