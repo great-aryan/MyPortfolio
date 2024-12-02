@@ -277,9 +277,11 @@ img {
 .home__description{
   margin-bottom: var(--mb-2);
 }
-.home__scroll{
-  /* display: none; */
-}
+
+/* .home__scroll{ 
+  display: none; 
+} */
+
 .home__scroll-button{
   color: var(--first-color);
   transition: .3s;
@@ -319,6 +321,10 @@ img {
 }
 .button--flex{
   display: inline-flex;
+  align-items: center;
+}
+
+.button__center{
   align-items: center;
 }
 
@@ -468,10 +474,76 @@ img {
   margin-left: 5px;
 }
 
+.copied-popup {
+  visibility: hidden;
+  opacity: 0;
+  font-size: 16px;
+  white-space: nowrap;
+  color: black;
+  position: absolute;
+  right: -50%; /* Fine-tune for desired spacing */
+  top: 50%; /* Align with the center of the button */
+  transform: translate(100%, -50%); /* Offset position */
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+
+.copy-button {
+  position: relative;
+  background-color: white;
+  font-size: 24px;
+  border: None;
+  cursor:pointer;
+}
+
+.copied-popup.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.contact__form {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact__form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact__input,
+.contact__textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--text-color-light);
+  border-radius: 0.5rem;
+  font-size: var(--normal-font-size);
+  font-family: var(--body-font);
+  outline: none;
+}
+
+.contact__input:focus,
+.contact__textarea:focus {
+  border-color: var(--first-color);
+  box-shadow: 0 0 0 2px var(--first-color-lighter);
+}
+
+.contact__textarea {
+  resize: none;
+}
+
+
 .contact__buttons{
   display: flex;
   justify-content: center;
 }
+
 .contact__container p{
   text-align: center;
 }

@@ -324,24 +324,61 @@
             <!--==================== CONTACT ME ====================-->
             <section class="contact section" id="contact">
                 <div class="box">
-                <h2 class="section__title">What's Next?</h2>
-                <span class="section__subtitle">Get In Touch</span>
-                <div class="contact__container container">
-                    <p class="about__description">Email ID : <a href="mailto:aryans2808@gmail.com">aryans2808@gmail.com</a> </p>
-                    <p class="about__description">Thank you for visiting my portfolio website! If you have any questions, comments, or just want to say hello, please feel free to contact me using the button below. I'll do my best to respond as soon as possible. Don't hesitate to get in touch!</p>
-                    <div class="contact__buttons">
-                        <a href="mailto:aryans2808@gmail.com" class="button button--flex">
-                            Say Hello <i class="uil uil-envelope-check"></i>
-                        </a>
+                    <h2 class="section__title">What's Next?</h2>
+                    <span class="section__subtitle">Get In Touch</span>
+                    <div class="contact__container container">
+                        <p class="about__description">
+                            Email ID : <span id="email">aryans2808@gmail.com</span>
+                            <button onclick="copyToClipboard()" class="copy-button">
+                                <i class="uil uil-copy"></i>
+                                <span class="copied-popup" id="copied-popup">Copied! 🎉</span>
+                            </button>
+                            
+                        </p>
+                        <p class="about__description">
+                            Thank you for visiting my portfolio website! If you have any questions, comments, or just want to say hello, please feel free to contact me using the button below. I'll do my best to respond as soon as possible. Don't hesitate to get in touch!
+                        </p>
+                        <div class="contact__buttons">
+                            <a href="mailto:aryans2808@gmail.com" class="button button--flex">
+                                Say Hello <i class="uil uil-envelope-check"></i>
+                            </a>
+                        </div>
+                        <form id="contact-form" class="contact__form">
+                            <div class="contact__form-group">
+                                <input type="text" id="name" name="name" placeholder="Your Name" required class="contact__input">
+                            </div>
+                            <div class="contact__form-group">
+                                <input type="email" id="email" name="email" placeholder="Your Email" required class="contact__input">
+                            </div>
+                            <div class="contact__form-group">
+                                <textarea id="message" name="message" rows="4" placeholder="Your Message" required class="contact__textarea"></textarea>
+                            </div>
+                            <button type="submit" class="button button__center">
+                                Send Message
+                            </button>
+                        </form>
+                        
                     </div>
                 </div>
-            </div>
             </section>
         </main>
         
         <!--==================== SWIPER JS ====================-->
         <script src="./assets/js/swiper-bundle.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/TypewriterJS/2.19.0/core.min.js" integrity="sha512-t4NGjfaRaGCjmiTGBsiG3w8FCp8ZY7dPlwZAXfeoGPARUT/rt3OP0NpQkblSgZy/2R8vPTXiEcq/zcWIJ8NusQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+            function copyToClipboard() {
+                const email = document.getElementById('email').textContent;
+                const popup = document.getElementById('copied-popup');
+
+                navigator.clipboard.writeText(email).then(() => {
+                    popup.classList.add('show');
+                    setTimeout(() => popup.classList.remove('show'), 2000); // Hide popup after 2 seconds
+                }).catch(() => {
+                    alert('Failed to copy email.');
+                });
+            }
+        </script>
         <!--==================== MAIN JS ====================-->
         <script src="assets/js/main.js"></script>
     </body>

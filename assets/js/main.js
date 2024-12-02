@@ -77,3 +77,24 @@ typewriter.typeString('Frontend Developer')
     .typeString('Music Producer')
     .pauseFor(1000)
     .start();
+
+// Include this after initializing other components
+document.getElementById('contact-form').addEventListener('submit', (e) => {
+    e.preventDefault(); // Prevent form refresh
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    emailjs.send('service_id', 'template_id', {
+        name: name,
+        email: email,
+        message: message,
+    }, 'public_key').then(() => {
+        alert('Message sent successfully!');
+        document.getElementById('contact-form').reset();
+    }).catch((error) => {
+        alert('Failed to send message. Please try again later.');
+        console.error('EmailJS Error:', error);
+    });
+});
