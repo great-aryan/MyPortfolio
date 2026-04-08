@@ -1,5 +1,5 @@
 # Aryan-Portfolio
-https://portfolio.greataryan.com
+https://greataryan.com
 
 My Portfolio
 
