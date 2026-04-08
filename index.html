@@ -1,385 +1,685 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aryan — CS Engineer · AI/ML · Full-Stack</title>
+  <meta name="description" content="Portfolio of Aryan — CS Engineer specialising in AI/ML, Android, and Full-Stack Development." />
 
-        <!--==================== UNICONS ====================-->
-        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-        <link rel="shortcut icon" href="assets/media/apple-touch-icon.png" type="image/x-icon">
-        <!--==================== SWIPER CSS ====================-->
-        <link rel="stylesheet" href="./assets/css/styles.css">
-        
-        <!--==================== CSS ====================-->
-        <link
-        rel="stylesheet"
-        href="assets/css/swiper-bundle.min.css"
-      />
-        <title>Aryan - Android Fullstack Developer</title>
-    </head>
-    <body>
-        <!--==================== HEADER ====================-->
-        <header class="header" id="header">
-            <nav class="nav container">
-                <a href="#" class="nav__logo">Aryan</a>
-                <div class="nav__menu" id="nav-menu">
-                    <ul class="nav__list grid">
-                        <li class="nav__item">
-                            <a href="#home" class="nav__link">
-                                <i class="uil uil-estate nav__icon"></i>Home
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#about" class="nav__link">
-                                <i class="uil uil-user nav__icon"></i>About
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#experience" class="nav__link">
-                            <i class="uil uil-briefcase-alt nav__icon"></i>Experience
-                        </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#projects" class="nav__link">
-                            <i class="uil uil-scenery nav__icon"></i>Projects
-                        </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#contact" class="nav__link">
-                            <i class="uil uil-message nav__icon"></i>Contact
-                        </a>
-                        </li>
-                    </ul>
-                    <i class="uil uil-times nav__close" id="nav-close"></i>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/media/favicon.png" type="image/png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+  <!-- Swiper CSS (local) -->
+  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+
+  <!-- ========== NOISE OVERLAY ========== -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- ========== CURSOR ========== -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" id="cursor-follower" aria-hidden="true"></div>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#home" class="nav__logo">
+        <span class="nav__logo-bracket">&lt;</span>Aryan<span class="nav__logo-bracket">/&gt;</span>
+      </a>
+
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li><a href="#home"     class="nav__link" data-section="home">Home</a></li>
+          <li><a href="#about"    class="nav__link" data-section="about">About</a></li>
+          <li><a href="#experience" class="nav__link" data-section="experience">Experience</a></li>
+          <li><a href="#projects" class="nav__link" data-section="projects">Projects</a></li>
+          <li><a href="#skills"   class="nav__link" data-section="skills">Skills</a></li>
+          <li><a href="#contact"  class="nav__link" data-section="contact">Contact</a></li>
+        </ul>
+        <button class="nav__close" id="nav-close" aria-label="Close menu">
+          <i class='bx bx-x'></i>
+        </button>
+      </div>
+
+      <div class="nav__actions">
+        <!-- Theme toggle -->
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <i class='bx bx-sun' id="theme-icon"></i>
+        </button>
+        <!-- Hamburger -->
+        <button class="nav__toggle" id="nav-toggle" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ========== MAIN ========== -->
+  <main class="main">
+
+    <!-- ===== HOME ===== -->
+    <section class="home section" id="home">
+      <div class="home__container container">
+
+        <div class="home__text">
+          <p class="home__greeting reveal-up">Hello, I'm</p>
+          <h1 class="home__name reveal-up" style="--delay:.1s">Aryan</h1>
+          <div class="home__typewriter reveal-up" style="--delay:.2s">
+            <span class="home__typewriter-prefix">I build </span>
+            <span id="typewriter-target" class="home__typewriter-word"></span>
+            <span class="home__typewriter-cursor">|</span>
+          </div>
+          <p class="home__description reveal-up" style="--delay:.3s">
+            B.Tech CS Engineer from Gautam Buddha University. Gold Medal winner at STMicroelectronics TechWeek 2025.
+            I craft intelligent systems — from ML models to full-stack apps to Power BI dashboards.
+          </p>
+          <div class="home__cta reveal-up" style="--delay:.4s">
+            <a href="#projects" class="btn btn--primary">View My Work</a>
+            <a href="#contact" class="btn btn--ghost">Get In Touch</a>
+          </div>
+        </div>
+
+        <div class="home__visual reveal-up" style="--delay:.2s">
+          <div class="home__avatar-wrap">
+            <div class="home__avatar-ring"></div>
+            <div class="home__avatar-ring home__avatar-ring--2"></div>
+            <img
+              src="assets/media/aryan.png"
+              alt="Aryan"
+              class="home__avatar"
+              onerror="this.style.display='none'; this.parentElement.querySelector('.home__avatar-placeholder').style.display='flex'"
+            />
+            <div class="home__avatar-placeholder">
+              <i class='bx bx-user'></i>
+            </div>
+          </div>
+
+          <!-- Floating badges -->
+          <!-- <div class="home__badge home__badge--tl">
+            <i class='bx bx-medal'></i>
+            <span>Gold Medal<br/><small>TechWeek 2025</small></span>
+          </div>
+          <div class="home__badge home__badge--br">
+            <i class='bx bx-code-alt'></i>
+            <span>CGPA 8.37<br/><small>GBU 2025</small></span>
+          </div>
+        </div> -->
+
+        <!-- Social links -->
+        <div class="home__social reveal-left" style="--delay:.5s">
+          <a href="https://github.com/great-aryan" target="_blank" rel="noopener" class="home__social-link" aria-label="GitHub">
+            <i class='bx bxl-github'></i>
+          </a>
+          <a href="https://linkedin.com/in/great-aryan" target="_blank" rel="noopener" class="home__social-link" aria-label="LinkedIn">
+            <i class='bx bxl-linkedin'></i>
+          </a>
+          <a href="https://www.instagram.com/great_aryan" target="_blank" rel="noopener" class="home__social-link" aria-label="Instagram">
+            <i class='bx bxl-instagram'></i>
+          </a>
+          <a href="mailto:aryans2808@gmail.com" class="home__social-link" aria-label="Email">
+            <i class='bx bx-envelope'></i>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Scroll down -->
+      <a href="#about" class="home__scroll" aria-label="Scroll to about">
+        <span class="home__scroll-label">Scroll</span>
+        <i class='bx bx-chevrons-down'></i>
+      </a>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__tag reveal-up">01 / About</span>
+          <h2 class="section__title reveal-up" style="--delay:.1s">Who I Am</h2>
+        </div>
+
+        <div class="about__grid">
+          <div class="about__img-wrap reveal-left">
+            <img
+              src="assets/media/aryan.png"
+              alt="Aryan"
+              class="about__img"
+              onerror="this.style.display='none'"
+            />
+            <div class="about__img-deco"></div>
+          </div>
+
+          <div class="about__content reveal-right">
+            <p class="about__bio">
+              Computer Science graduate from <strong>Gautam Buddha University</strong> with a strong interest in building
+              real-world computing systems across AI/ML, mobile development, and data platforms.
+            </p>
+            <p class="about__bio">
+              During my internship at <strong>STMicroelectronics</strong>, I developed automation tools and BI solutions
+              that reduced manual effort by 60% — recognised with a
+              <strong>Gold Medal at TechWeek 2025</strong> ($650 prize). I also served as
+              Class Representative for all four years of my degree.
+            </p>
+
+            <div class="about__stats">
+              <div class="about__stat">
+                <span class="about__stat-number">3+</span>
+                <span class="about__stat-label">Internships</span>
+              </div>
+              <div class="about__stat">
+                <span class="about__stat-number">8+</span>
+                <span class="about__stat-label">Projects</span>
+              </div>
+              <div class="about__stat">
+                <span class="about__stat-number">8.37</span>
+                <span class="about__stat-label">CGPA</span>
+              </div>
+              <div class="about__stat">
+                <span class="about__stat-number">4×</span>
+                <span class="about__stat-label">Class Rep</span>
+              </div>
+            </div>
+
+            <div class="about__actions">
+              <a href="assets/media/Aryan_CV.pdf" download class="btn btn--primary">
+                <i class='bx bx-download'></i> Download CV
+              </a>
+              <a href="#contact" class="btn btn--ghost">Let's Talk</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EXPERIENCE ===== -->
+    <section class="experience section" id="experience">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__tag reveal-up">02 / Experience</span>
+          <h2 class="section__title reveal-up" style="--delay:.1s">Where I've Worked</h2>
+        </div>
+
+        <div class="timeline reveal-up" style="--delay:.2s">
+
+          <!-- STMicroelectronics -->
+          <div class="timeline__item" data-aos>
+            <div class="timeline__marker">
+              <span class="timeline__dot"></span>
+              <span class="timeline__line"></span>
+            </div>
+            <div class="timeline__card">
+              <div class="timeline__header">
+                <div>
+                  <h3 class="timeline__role">Business Intelligence &amp; Data Analytics Intern</h3>
+                  <p class="timeline__company">STMicroelectronics (India) Pvt. Ltd</p>
                 </div>
-                <div class="nav__btns">
-                    <div class="nav__toggle" id="nav-toggle">
-                        <i class="uil uil-apps"></i>
-                    </div>
+                <span class="timeline__date">Sept 2024 – Jun 2025</span>
+              </div>
+              <ul class="timeline__list">
+                <li>Developed a <strong>BPM Assistant</strong> (Python, PyQt5, Pandas) reducing manual effort by <strong>60%</strong></li>
+                <li>Designed &amp; deployed <strong>6+ Power BI dashboards</strong> (Backlog, aATP, Sales, POS Forecasting)</li>
+                <li><strong>Won Gold Medal</strong> at ST TechWeek 2025 — $650 prize for "Assistant for Faster Business Development"</li>
+              </ul>
+              <span class="timeline__tag">Greater Noida, India</span>
+            </div>
+          </div>
+
+          <!-- KLEC Motors -->
+          <div class="timeline__item" data-aos>
+            <div class="timeline__marker">
+              <span class="timeline__dot"></span>
+              <span class="timeline__line"></span>
+            </div>
+            <div class="timeline__card">
+              <div class="timeline__header">
+                <div>
+                  <h3 class="timeline__role">Software Development Engineer Intern</h3>
+                  <p class="timeline__company">KLEC Motors Pvt. Ltd</p>
                 </div>
-            </nav>
-        </header>
+                <span class="timeline__date">May – Oct 2023</span>
+              </div>
+              <ul class="timeline__list">
+                <li>Built a <strong>full-stack Android app</strong> for a hydrogen vehicle startup (Govt. of India supported)</li>
+                <li>Stack: Jetpack Compose, Kotlin, Bluetooth BLE/GATT, Firebase, Google Cloud, Retrofit, WebSockets</li>
+                <li>Designed complete UI/UX in <strong>Figma</strong>; led 6-month successful engagement</li>
+              </ul>
+              <span class="timeline__tag">Remote</span>
+            </div>
+          </div>
 
-        <!--==================== MAIN ====================-->
-        <main class="main">
-            <!--==================== HOME ====================-->
-            <section class="home section" id="home">
-                <div class="home__container container grid">
-                    <div class="home__content grid">
-                        <div class="home__social">
-                            <a href="https://github.com/great-aryan" target="_blank" class="home__social-icon">
-                                <i class="uil uil-github-alt"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/great-aryan" target="_blank" class="home__social-icon">
-                                <i class="uil uil-linkedin-alt"></i>
-                            </a>
-                            <a href="https://www.instagram.com/great_aryan" target="_blank" class="home__social-icon">
-                                <i class="uil uil-instagram"></i>
-                            </a>
-                        </div>
-                        <div class="home__img">
-                            <svg class="home__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <mask id="mask0" mask-type="alpha">
-                                    <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
-                                    130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
-                                    97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
-                                    0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
-                                </mask>
-                                <g mask="url(#mask0)">
-                                    <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
-                                    165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
-                                    129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
-                                    -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
-                                    <image class="home__blob-img" x="12" y="18" href="assets/media/square-aryan.png"/>
-                                </g>
-                            </svg>
-                        </div>
-                        <div class="home__data">
-                            <h1 class="home__title">Hi, I am Aryan</h1>
-                            <h3 class="home__subtitle" id="typewriter"></h3>
-                            <p class="home__description">Software Engineer specialised in frontend and backend development for complex Android Apps. Checkout my <a href="#projects">Projects</a> and <a href="https://github.com/great-aryan" target="_blank">Github</a> profile.</p>
-                            <a href="#contact" class="button button--flex">
-                                Contact Me<i class="uil uil-message button__icon"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="home__scroll">
-                        <a href="#about" class="home_scroll-button button--flex">
-                        <i class="uil uil-mouse-alt home__scroll-mouse"></i>
-                        <span class="home__scroll-name">Scroll down</span>
-                        <i class="uil uil-arrow-down home__scroll-arrow"></i>
-                        </a>
-                    </div>
+          <!-- CNH Industrial -->
+          <div class="timeline__item" data-aos>
+            <div class="timeline__marker">
+              <span class="timeline__dot"></span>
+            </div>
+            <div class="timeline__card">
+              <div class="timeline__header">
+                <div>
+                  <h3 class="timeline__role">Human Resource Intern — Video Production</h3>
+                  <p class="timeline__company">CNH Industrial (India) Pvt. Ltd</p>
                 </div>
-            </section>
+                <span class="timeline__date">Apr – Jul 2022</span>
+              </div>
+              <ul class="timeline__list">
+                <li>Produced 4 onboarding programme videos for a multinational corporation</li>
+                <li>Synthesised 200+ pages of HR policies into interactive presentations using Adobe Premiere &amp; After Effects</li>
+              </ul>
+              <span class="timeline__tag">Greater Noida, India</span>
+            </div>
+          </div>
 
-            <!--==================== ABOUT ====================-->
-            <section class="about section" id="about">
-                <h2 class="section__title">About Me</h2>
-                <span class="section__subtitle">My introduction</span>
-                <div class="about__container container grid">
-                    <img src="./assets/media/aryan.png" alt="about" class="about__img">
-                    <div class="about-data">
-                        <p class="about__description">I am a Mobile Application Developer with extensive knowledge and 2 years of experience in Android Development, Full Stack Developer with UI/UX Designs delivering quality work.</p>
-                        <div class="about__info">
-                            <img src="assets/media/android.svg" alt="android">
-                            <img src="assets/media/java.svg" alt="">
-                            <img src="assets/media/adobe.svg" alt="">
-                        </div>
-                        <div class="about__buttons">
-                            <a href="assets/pdf/resume.pdf" target="_blank" class="button button--flex">
-                                Download CV <i class="uil uil-download-alt button__icon"></i>
-                            </a>
-                        </div>
-                    </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section class="projects section" id="projects">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__tag reveal-up">03 / Projects</span>
+          <h2 class="section__title reveal-up" style="--delay:.1s">Things I've Built</h2>
+        </div>
+
+        <div class="projects__grid">
+
+          <!-- Scope Base -->
+          <article class="project-card reveal-up" style="--delay:.1s">
+            <div class="project-card__img-wrap">
+              <img src="assets/media/scope_base.png" alt="Scope Base" class="project-card__img"
+                onerror="this.parentElement.classList.add('no-img')" />
+              <div class="project-card__placeholder"><i class='bx bx-devices'></i></div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__tags">
+                <span>Web</span><span>Android</span><span>iOS</span><span>Open Source</span>
+              </div>
+              <h3 class="project-card__title">Scope Base</h3>
+              <p class="project-card__desc">
+                Gamified career guidance platform covering all Indian &amp; international exams.
+                Knowledge-base recommendation engine mapping student interests to personalised career paths.
+              </p>
+              <div class="project-card__links">
+                <a href="https://github.com/great-aryan" target="_blank" rel="noopener" class="project-card__link">
+                  <i class='bx bxl-github'></i> GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- DocSafe -->
+          <article class="project-card reveal-up" style="--delay:.15s">
+            <div class="project-card__img-wrap">
+              <img src="assets/media/docsafe.png" alt="DocSafe" class="project-card__img"
+                onerror="this.parentElement.classList.add('no-img')" />
+              <div class="project-card__placeholder"><i class='bx bx-shield-alt-2'></i></div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__tags">
+                <span>PWA</span><span>Android</span><span>Google Drive</span>
+              </div>
+              <h3 class="project-card__title">DocSafe</h3>
+              <p class="project-card__desc">
+                Offline-first, privacy-focused document management. Zero-server architecture — all files sync to personal Google Drive.
+                Auto-converts documents to PDF/JPG/PNG with smart compression.
+              </p>
+              <div class="project-card__links">
+                <a href="https://github.com/great-aryan" target="_blank" rel="noopener" class="project-card__link">
+                  <i class='bx bxl-github'></i> GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- RAG Chatbot -->
+          <article class="project-card reveal-up" style="--delay:.2s">
+            <div class="project-card__img-wrap">
+              <img src="assets/media/rag_chatbot.png" alt="RAG Chatbot" class="project-card__img"
+                onerror="this.parentElement.classList.add('no-img')" />
+              <div class="project-card__placeholder"><i class='bx bx-bot'></i></div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__tags">
+                <span>Python</span><span>LangChain</span><span>FAISS</span><span>React</span>
+              </div>
+              <h3 class="project-card__title">Intelligent RAG Chatbot</h3>
+              <p class="project-card__desc">
+                Retrieval-Augmented Generation chatbot using OpenAI GPT, LangChain, and FAISS vector database.
+                Processes PDFs, text files &amp; web content. <strong>92% user satisfaction</strong> in contextual response quality.
+              </p>
+              <div class="project-card__links">
+                <a href="https://github.com/great-aryan" target="_blank" rel="noopener" class="project-card__link">
+                  <i class='bx bxl-github'></i> GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- YOLOv8 -->
+          <article class="project-card reveal-up" style="--delay:.25s">
+            <div class="project-card__img-wrap">
+              <img src="assets/media/yolo.png" alt="Object Detection" class="project-card__img"
+                onerror="this.parentElement.classList.add('no-img')" />
+              <div class="project-card__placeholder"><i class='bx bx-camera'></i></div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__tags">
+                <span>YOLOv8</span><span>OpenCV</span><span>Flask</span>
+              </div>
+              <h3 class="project-card__title">Computer Vision Detection System</h3>
+              <p class="project-card__desc">
+                Real-time object detection for 80+ classes using YOLOv8. Custom training with data augmentation achieving
+                <strong>89% mAP score</strong>. Flask web app for live video stream processing.
+              </p>
+              <div class="project-card__links">
+                <a href="https://github.com/great-aryan" target="_blank" rel="noopener" class="project-card__link">
+                  <i class='bx bxl-github'></i> GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Krishi Samadhan -->
+          <article class="project-card reveal-up" style="--delay:.3s">
+            <div class="project-card__img-wrap">
+              <img src="assets/media/krishi.webp" alt="Krishi Samadhan" class="project-card__img"
+                onerror="this.parentElement.classList.add('no-img')" />
+              <div class="project-card__placeholder"><i class='bx bx-leaf'></i></div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__tags">
+                <span>TensorFlow</span><span>Android</span><span>Hindi UI</span>
+              </div>
+              <h3 class="project-card__title">Krishi Samadhan</h3>
+              <p class="project-card__desc">
+                AI crop disease detection for Indian farmers. TensorFlow model trained on 30+ crop species.
+                Hindi-language interface ensuring accessibility. Presented at Rajasthan IT Day Hackathon.
+              </p>
+              <div class="project-card__links">
+                <a href="https://github.com/great-aryan/KrishiSamadhan" target="_blank" rel="noopener" class="project-card__link">
+                  <i class='bx bxl-github'></i> GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- MyGBU -->
+          <article class="project-card reveal-up" style="--delay:.35s">
+            <div class="project-card__img-wrap">
+              <img src="assets/media/my_gbu.webp" alt="MyGBU App" class="project-card__img"
+                onerror="this.parentElement.classList.add('no-img')" />
+              <div class="project-card__placeholder"><i class='bx bx-buildings'></i></div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__tags">
+                <span>Android</span><span>Kotlin</span><span>Firebase</span>
+              </div>
+              <h3 class="project-card__title">MyGBU App</h3>
+              <p class="project-card__desc">
+                University services app — library, fee portal, timetables, campus maps, notices, placement info.
+                <strong>Won Best Freshers Award</strong> at GBU Hackathon 2022.
+              </p>
+              <div class="project-card__links">
+                <a href="https://github.com/great-aryan/MyGBU-app" target="_blank" rel="noopener" class="project-card__link">
+                  <i class='bx bxl-github'></i> GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section class="skills section" id="skills">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__tag reveal-up">04 / Skills</span>
+          <h2 class="section__title reveal-up" style="--delay:.1s">What I Work With</h2>
+        </div>
+
+        <div class="skills__grid">
+
+          <div class="skill-group reveal-up" style="--delay:.1s">
+            <div class="skill-group__icon"><i class='bx bx-code-block'></i></div>
+            <h3 class="skill-group__title">Languages</h3>
+            <div class="skill-group__tags">
+              <span>Python</span><span>Java</span><span>Kotlin</span>
+              <span>JavaScript</span><span>C/C++</span><span>SQL</span>
+            </div>
+          </div>
+
+          <div class="skill-group reveal-up" style="--delay:.15s">
+            <div class="skill-group__icon"><i class='bx bx-brain'></i></div>
+            <h3 class="skill-group__title">AI / ML</h3>
+            <div class="skill-group__tags">
+              <span>TensorFlow</span><span>PyTorch</span><span>Scikit-learn</span>
+              <span>Keras</span><span>OpenCV</span><span>LangChain</span>
+              <span>Pandas</span><span>NumPy</span>
+            </div>
+          </div>
+
+          <div class="skill-group reveal-up" style="--delay:.2s">
+            <div class="skill-group__icon"><i class='bx bx-mobile-alt'></i></div>
+            <h3 class="skill-group__title">Web &amp; Mobile</h3>
+            <div class="skill-group__tags">
+              <span>React.js</span><span>Node.js</span><span>Django</span>
+              <span>Flask</span><span>Jetpack Compose</span><span>HTML/CSS</span>
+            </div>
+          </div>
+
+          <div class="skill-group reveal-up" style="--delay:.25s">
+            <div class="skill-group__icon"><i class='bx bxl-google-cloud'></i></div>
+            <h3 class="skill-group__title">Cloud &amp; DevOps</h3>
+            <div class="skill-group__tags">
+              <span>GCP</span><span>Firebase</span><span>Docker</span>
+              <span>Git</span><span>Linux</span>
+            </div>
+          </div>
+
+          <div class="skill-group reveal-up" style="--delay:.3s">
+            <div class="skill-group__icon"><i class='bx bx-bar-chart-alt-2'></i></div>
+            <h3 class="skill-group__title">Business Intelligence</h3>
+            <div class="skill-group__tags">
+              <span>Power BI</span><span>Data Visualisation</span>
+              <span>ETL Pipelines</span><span>Statistical Analysis</span>
+            </div>
+          </div>
+
+          <div class="skill-group reveal-up" style="--delay:.35s">
+            <div class="skill-group__icon"><i class='bx bx-palette'></i></div>
+            <h3 class="skill-group__title">Design &amp; Tools</h3>
+            <div class="skill-group__tags">
+              <span>Figma</span><span>Adobe Premiere</span><span>After Effects</span>
+              <span>Android Studio</span><span>VS Code</span><span>Jupyter</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== AWARDS ===== -->
+    <section class="awards section" id="awards">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__tag reveal-up">05 / Recognition</span>
+          <h2 class="section__title reveal-up" style="--delay:.1s">Awards &amp; Honours</h2>
+        </div>
+
+        <div class="awards__list">
+
+          <div class="award-item reveal-up" style="--delay:.1s">
+            <div class="award-item__icon"><i class='bx bx-medal'></i></div>
+            <div class="award-item__body">
+              <h3 class="award-item__title">Gold Medal — InspireHub Winner</h3>
+              <p class="award-item__org">STMicroelectronics · ST TechWeek 2025</p>
+              <p class="award-item__desc">"Assistant for Faster Business Development Through Distribution Channel" — $650 prize, Team Disruptor</p>
+            </div>
+            <span class="award-item__date">Mar 2025</span>
+          </div>
+
+          <div class="award-item reveal-up" style="--delay:.15s">
+            <div class="award-item__icon"><i class='bx bx-trophy'></i></div>
+            <div class="award-item__body">
+              <h3 class="award-item__title">Best Freshers Award</h3>
+              <p class="award-item__org">GBU Hackathon 2022</p>
+              <p class="award-item__desc">Won for developing the MyGBU University Services App in first year of undergrad</p>
+            </div>
+            <span class="award-item__date">Mar 2022</span>
+          </div>
+
+          <div class="award-item reveal-up" style="--delay:.2s">
+            <div class="award-item__icon"><i class='bx bx-certification'></i></div>
+            <div class="award-item__body">
+              <h3 class="award-item__title">Blockchain Certification — NPTEL</h3>
+              <p class="award-item__org">IIT Kharagpur · Swayam Portal</p>
+              <p class="award-item__desc">12-week certified course in Blockchain Technology</p>
+            </div>
+            <span class="award-item__date">May 2024</span>
+          </div>
+
+          <div class="award-item reveal-up" style="--delay:.25s">
+            <div class="award-item__icon"><i class='bx bxs-calculator'></i></div>
+            <div class="award-item__body">
+              <h3 class="award-item__title">Silver Medal — IMO</h3>
+              <p class="award-item__org">International Mathematics Olympiad</p>
+              <p class="award-item__desc">Ranked 2nd in the entire district in Class VI</p>
+            </div>
+            <span class="award-item__date">2014</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="contact section" id="contact">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__tag reveal-up">06 / Contact</span>
+          <h2 class="section__title reveal-up" style="--delay:.1s">Get In Touch</h2>
+        </div>
+
+        <div class="contact__grid">
+
+          <div class="contact__info reveal-left">
+            <p class="contact__intro">
+              I'm currently open to new opportunities. Whether you have a question, a project idea,
+              or just want to say hello — my inbox is always open!
+            </p>
+
+            <div class="contact__details">
+              <a href="mailto:aryans2808@gmail.com" class="contact__detail">
+                <div class="contact__detail-icon"><i class='bx bx-envelope'></i></div>
+                <div>
+                  <span class="contact__detail-label">Email</span>
+                  <span class="contact__detail-value">aryans2808@gmail.com</span>
                 </div>
-            </section>
-            <!--==================== QUALIFICATION ====================-->
-            <section class="qualification section" id="experience">
-                <h2 class="section__title">Experience</h2>
-                <span class="section__subtitle">My Personal Journey</span>
-                <div class="qualification__container container">
-                    <div class="qualification__tabs">
-                        <div class="button--flex qualification__button qualification__active" data-target="#education">
-                            <i class="uil uil-graduation-cap qualification__icon"></i>Education
-                        </div>
-                        <div class="button--flex qualification__button" data-target="#work">
-                            <i class="uil uil-briefcase-alt qualification__icon__icon"></i>Work
-                        </div>
-                    </div>
-                   <div class="qualification__section">
-                        <div class="qualification__content qualification__active" data-content id="education">  
-                        <!-- data 1 -->
-                        <div class="qualification__data">
-                            <div>
-                                <h3 class="qualification__title">High School</h3>
-                                <span class="qualification__subtitle">S.S. Children Academy, Moradabad</span>
-                                <div class="qualification__calendar">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    Apr 2017 - Mar 2018
-                                </div>
-                            </div>
-                            <div>
-                                <span class="qualification__rounder"></span>
-                                <span class="qualification__line"></span>
-                            </div>
-                        </div>
-                        <!-- data 2 -->
-                        <div class="qualification__data">
-                            <div></div>
-                            <div>
-                                <span class="qualification__rounder"></span>
-                                <span class="qualification__line"></span>
-                            </div>
-                            <div>
-                                <h3 class="qualification__title">Intermediate , PCM</h3>
-                                <span class="qualification__subtitle">Lady Anusuya Singhania Educational Academy</span>
-                                <div class="qualification__calendar">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    Apr 2019 - Mar 2020
-                                </div>
-                            </div>
-                        </div>
-                        <!-- data 3 -->
-                        <div class="qualification__data">
-                            <div>
-                                <h3 class="qualification__title">B.Tech - Computer Science and Engineering</h3>
-                                <span class="qualification__subtitle">Gautam Buddha University</span>
-                                <div class="qualification__calendar">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    Sept 2021 - Jun 2025
-                                </div>
-                            </div>
-                            <div>
-                                <span class="qualification__rounder"></span>
-                                <span class="qualification__line"></span>
-                            </div>
-                        </div>
-                        </div>
-                        <div class="qualification__content" data-content id="work">
-                        <!-- data 1 -->
-                        <div class="qualification__data">
-                            <div>
+                <button class="contact__copy-btn" data-copy="aryans2808@gmail.com" aria-label="Copy email">
+                  <i class='bx bx-copy'></i>
+                  <span class="contact__copy-tip">Copy</span>
+                </button>
+              </a>
 
-                                <h3 class="qualification__title">GDSC - Gautam Buddha University</h3>
-                                <span class="qualification__subtitle">Core Team Member</span>
-                                <div class="qualification__calendar">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    Jul 2022 - Dec 2022
-                                </div>
-                            </div>
-                            <div>
-                                <span class="qualification__rounder"></span>
-                                <span class="qualification__line"></span>
-                            </div>
-                        </div>
-                        <!-- data 2 -->
-                        <div class="qualification__data">
-                            <div></div>
-                            <div>
-                                <span class="qualification__rounder"></span>
-                                <span class="qualification__line"></span>
-                            </div>
-                            <div>
-
-                                <h3 class="qualification__title">Techno Club GBU</h3>
-                                <span class="qualification__subtitle">Developer Coordinator</span>
-                                <div class="qualification__calendar">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    Jan 2023 - Present
-                                </div>
-                            </div>
-                        </div>
-                        <!-- data 3 -->
-                        <div class="qualification__data">
-                            <div>
-
-                                <h3 class="qualification__title">Block Heads - Self-employed</h3>
-                                <span class="qualification__subtitle">Team Leader</span>
-                                <div class="qualification__calendar">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    Dec 2021 - Present
-                                </div>
-                            </div>
-                            <div>
-                                <span class="qualification__rounder"></span>
-                                <span class="qualification__line"></span>
-                            </div>
-                        </div>
-                        <!-- data 4  -->
-                        <div class="qualification__data">
-                            <div></div>
-                            <div>
-                                <span class="qualification__rounder"></span>
-                                <!-- <span class="qualification__line"></span> -->
-                            </div>
-                            <div>
-
-                                <h3 class="qualification__title">CNH Industrial · Internship</h3>
-                                <span class="qualification__subtitle">Summer Intern</span>
-                                <div class="qualification__calendar">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    Apr 2022 - Jul 2022
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
+              <a href="tel:+9175******47" class="contact__detail">
+                <div class="contact__detail-icon"><i class='bx bx-phone'></i></div>
+                <div>
+                  <span class="contact__detail-label">Phone</span>
+                  <span class="contact__detail-value">+91 75*** ***47</span>
                 </div>
+              </a>
 
-            </section>
-
-            <!--==================== PORTFOLIO ====================-->
-            <section class="portfolio section" id="projects">
-                <h2 class="section__title">Projects</h2>
-                <span class="section__subtitle">Most Recent Work</span>
-                <div class="portfolio__container container swiper-container">
-                      <div class="swiper-wrapper">
-                        <!-- project1 -->
-                        <div class="portfolio__content grid swiper-slide">
-                            <img src="assets/media/wcare.webp" alt="" class="portfolio__img">
-                            <div class="portfolio__data">
-                                <h3 class="portfolio__title">Wcare App</h3>
-                                <p class="portfolio__description">Focused on Women Security, Companion app for a security Pendent. Useful in emergency situations and contacting relatives and Distress numbers.</p>
-                                <a href="https://github.com/great-aryan/Wcare" target="_blank" class="button button--flex button--small portfolio__button">
-                                    Github
-                                    <i class="uil uil-arrow-right button__icon"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portfolio__content grid swiper-slide">
-                            <img src="assets/media/my_gbu.webp" alt="" class="portfolio__img">
-                            <div class="portfolio__data">
-                                <h3 class="portfolio__title">My GBU App</h3>
-                                <p class="portfolio__description">University student application with many useful features like: Timetable, Notices, University Map, Admissions and much more.</p>
-                                <a href="https://github.com/great-aryan/MyGBU-app" target="_blank" class="button button--flex button--small portfolio__button">
-                                    Github
-                                    <i class="uil uil-arrow-right button__icon"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- project2 -->
-                        <!-- project3 -->
-                        <div class="portfolio__content grid swiper-slide">
-                            <img src="assets/media/krishi.webp" alt="" class="portfolio__img">
-                            <div class="portfolio__data">
-                                <h3 class="portfolio__title">Krishi Samadhan App</h3>
-                                <p class="portfolio__description">Based on machine learning model, used to determine various diseases of crops by capturing the images. Helpful in finding cures and causes of disease od plants.</p>
-                                <a href="https://github.com/great-aryan/KrishiSamadhan" target="_blank" class="button button--flex button--small portfolio__button">
-                                    Github
-                                    <i class="uil uil-arrow-right button__icon"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-button-prev previous">
-                        <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
-                    </div>
-                    <div class="swiper-button-next next">
-                        <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
-                    </div>
+              <div class="contact__detail">
+                <div class="contact__detail-icon"><i class='bx bx-map'></i></div>
+                <div>
+                  <span class="contact__detail-label">Location</span>
+                  <span class="contact__detail-value">Greater Noida, Uttar Pradesh, India</span>
                 </div>
-            </section>
+              </div>
+            </div>
 
-            <!--==================== CONTACT ME ====================-->
-            <section class="contact section" id="contact">
-                <div class="box">
-                    <h2 class="section__title">What's Next?</h2>
-                    <span class="section__subtitle">Get In Touch</span>
-                    <div class="contact__container container">
-                        <p class="about__description">
-                            Email ID : <span id="email">aryans2808@gmail.com</span>
-                            <button onclick="copyToClipboard()" class="copy-button">
-                                <i class="uil uil-copy"></i>
-                                <span class="copied-popup" id="copied-popup">Copied! 🎉</span>
-                            </button>
-                            
-                        </p>
-                        <p class="about__description">
-                            Thank you for visiting my portfolio website! If you have any questions, comments, or just want to say hello, please feel free to contact me using the button below. I'll do my best to respond as soon as possible. Don't hesitate to get in touch!
-                        </p>
-                        <div class="contact__buttons">
-                            <a href="mailto:aryans2808@gmail.com" class="button button--flex">
-                                Say Hello <i class="uil uil-envelope-check"></i>
-                            </a>
-                        </div>
-                        <form id="contact-form" class="contact__form">
-                            <div class="contact__form-group">
-                                <input type="text" id="name" name="name" placeholder="Your Name" required class="contact__input">
-                            </div>
-                            <div class="contact__form-group">
-                                <input type="email" id="email" name="email" placeholder="Your Email" required class="contact__input">
-                            </div>
-                            <div class="contact__form-group">
-                                <textarea id="message" name="message" rows="4" placeholder="Your Message" required class="contact__textarea"></textarea>
-                            </div>
-                            <button type="submit" class="button button__center">
-                                Send Message
-                            </button>
-                        </form>
-                        
-                    </div>
-                </div>
-            </section>
-        </main>
-        
-        <!--==================== SWIPER JS ====================-->
-        <script src="./assets/js/swiper-bundle.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/TypewriterJS/2.19.0/core.min.js" integrity="sha512-t4NGjfaRaGCjmiTGBsiG3w8FCp8ZY7dPlwZAXfeoGPARUT/rt3OP0NpQkblSgZy/2R8vPTXiEcq/zcWIJ8NusQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script>
-            function copyToClipboard() {
-                const email = document.getElementById('email').textContent;
-                const popup = document.getElementById('copied-popup');
+            <div class="contact__socials">
+              <a href="https://github.com/great-aryan" target="_blank" rel="noopener" aria-label="GitHub">
+                <i class='bx bxl-github'></i>
+              </a>
+              <a href="https://linkedin.com/in/great-aryan" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <i class='bx bxl-linkedin'></i>
+              </a>
+              <a href="https://www.instagram.com/great_aryan" target="_blank" rel="noopener" aria-label="Instagram">
+                <i class='bx bxl-instagram'></i>
+              </a>
+            </div>
+          </div>
 
-                navigator.clipboard.writeText(email).then(() => {
-                    popup.classList.add('show');
-                    setTimeout(() => popup.classList.remove('show'), 2000); // Hide popup after 2 seconds
-                }).catch(() => {
-                    alert('Failed to copy email.');
-                });
-            }
-        </script>
-        <!--==================== MAIN JS ====================-->
-        <script src="assets/js/main.js"></script>
-    </body>
+          <form class="contact__form reveal-right" id="contact-form" novalidate>
+            <div class="form__group">
+              <label for="name" class="form__label">Name</label>
+              <input type="text" id="name" name="name" class="form__input" placeholder="Your Name" required />
+            </div>
+            <div class="form__group">
+              <label for="email-input" class="form__label">Email</label>
+              <input type="email" id="email-input" name="email" class="form__input" placeholder="your@email.com" required />
+            </div>
+            <div class="form__group">
+              <label for="subject" class="form__label">Subject</label>
+              <input type="text" id="subject" name="subject" class="form__input" placeholder="What's this about?" />
+            </div>
+            <div class="form__group">
+              <label for="message" class="form__label">Message</label>
+              <textarea id="message" name="message" class="form__textarea" rows="5" placeholder="Your message here…" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full" id="form-submit">
+              <i class='bx bx-send'></i> Send Message
+            </button>
+            <p class="form__status" id="form-status" aria-live="polite"></p>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <a href="#home" class="footer__logo">
+          <span class="nav__logo-bracket">&lt;</span>Aryan<span class="nav__logo-bracket">/&gt;</span>
+        </a>
+        <p class="footer__copy">
+          Designed &amp; built by <strong>Aryan</strong> · 2025
+        </p>
+        <a href="#home" class="footer__back-top" aria-label="Back to top">
+          <i class='bx bx-up-arrow-alt'></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== SCRIPTS ========== -->
+  <!-- Swiper JS (local) -->
+  <script src="assets/js/swiper-bundle.min.js"></script>
+
+  <!-- EmailJS (optional — add your keys in main.js) -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <!-- Main JS -->
+  <script src="assets/js/main.js"></script>
+
+</body>
 </html>
