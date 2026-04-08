@@ -333,7 +333,7 @@ input, textarea { font-family: inherit; }
   margin-bottom: 0.75rem;
 }
 .home__name {
-  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-size: clamp(2.2rem, 10vw, 5.5rem);
   font-weight: 800;
   line-height: 1;
   margin-bottom: 1.25rem;
@@ -349,6 +349,7 @@ input, textarea { font-family: inherit; }
   min-height: 1.8em;
   display: flex; align-items: center; gap: 0.35rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .home__typewriter-prefix { color: var(--text-muted); }
 .home__typewriter-word { color: var(--accent); }
@@ -973,18 +974,29 @@ input, textarea { font-family: inherit; }
   .home__container {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
-    text-align: center; gap: 2rem; padding: 3rem 0 5rem;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 2rem 0 5rem;
   }
-  .home__text { grid-column: 1; }
-  .home__visual { grid-column: 1; grid-row: 1; display: flex; justify-content: center; }
-  .home__social { justify-content: center; }
-  .home__cta { justify-content: center; }
-  .home__description { margin-inline: auto; }
+  .home__text { grid-column: 1; grid-row: 2; }
+  .home__visual {
+    grid-column: 1; grid-row: 1;
+    display: flex; justify-content: center;
+  }
+  .home__social {
+    grid-column: 1; grid-row: 3;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .home__cta { justify-content: center; flex-wrap: wrap; }
+  .home__description { margin-inline: auto; max-width: 100%; }
+  .home__typewriter { justify-content: center; font-size: 0.9rem; }
 
-  .home__avatar-wrap { width: 200px; height: 200px; }
-  .home__avatar, .home__avatar-placeholder { width: 160px; height: 160px; }
+  .home__avatar-wrap { width: 180px; height: 180px; }
+  .home__avatar, .home__avatar-placeholder { width: 140px; height: 140px; }
   .home__badge--tl { top: -0.5rem; left: -1rem; }
   .home__badge--br { bottom: -0.5rem; right: -1rem; }
+  .home__scroll { bottom: 0.75rem; font-size: 0.6rem; }
 
   .projects__grid { grid-template-columns: 1fr; }
   .skills__grid   { grid-template-columns: 1fr; }
