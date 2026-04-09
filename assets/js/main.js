@@ -316,3 +316,59 @@ document.querySelectorAll('.timeline__item').forEach((item, i) => {
   item.style.transition   = `opacity 0.6s ease ${i * 0.15}s, transform 0.6s ease ${i * 0.15}s`;
   timelineObserver.observe(item);
 });
+
+
+/* ─── PROJECT CARD WEBP HOVER / TAP PLAY ─────────────────── */
+document.querySelectorAll('.project-card').forEach(card => {
+  const imgWrap = card.querySelector('.project-card__img-wrap');
+  const thumbImg = card.querySelector('.project-card__thumb');
+  const animImg = card.querySelector('.project-card__anim');
+  if (!imgWrap || !animImg) return;
+
+  let thumbFailed = false;
+  let animFailed = false;
+
+  function syncFallbackState() {
+    if (thumbFailed && animFailed) {
+      imgWrap.classList.add('no-media');
+    } else {
+      imgWrap.classList.remove('no-media');
+    }
+  }
+
+  if (thumbImg) {
+    thumbImg.addEventListener('error', () => {
+      thumbFailed = true;
+      syncFallbackState();
+    });
+  }
+
+  animImg.addEventListener('error', () => {
+    animFailed = true;
+    syncFallbackState();
+  });
+
+  function activate() {
+    if (imgWrap.classList.contains('no-media')) return;
+    if (!animImg.src && animImg.dataset.webp) {
+      animImg.src = animImg.dataset.webp;
+    }
+    card.classList.add('is-active');
+  }
+
+  function deactivate() {
+    card.classList.remove('is-active');
+  }
+
+  card.addEventListener('mouseenter', activate);
+  card.addEventListener('mouseleave', deactivate);
+
+  card.addEventListener('touchstart', (e) => {
+    if (card.classList.contains('is-active')) {
+      deactivate();
+    } else {
+      activate();
+      e.preventDefault();
+    }
+  }, { passive: false });
+});
