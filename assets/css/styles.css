@@ -6,14 +6,60 @@
 /* ─── GOOGLE FONTS ─────────────────────────────────────────── */
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;600;700;800&display=swap');
 
-/* ─── CSS VARIABLES ─────────────────────────────────────────── */
+/* ─── Purple CSS VARIABLES ─────────────────────────────────────────── */
+/* :root {
+  --accent:        #6c63ff;
+  --accent-dim:    #4f46e5;
+  --accent-glow:   rgba(108, 99, 255, 0.18);
+
+  --bg:            #08080f;
+  --bg-2:          #0e0e1c;
+  --bg-3:          #141428;
+  --bg-card:       #0c0c18;
+  --border:        rgba(255,255,255,0.07);
+  --border-hover:  rgba(108, 99, 255, 0.5);
+  --text-primary:  #f2f2ff;
+  --text-secondary:#9090b8;
+  --text-muted:    #55556e;
+  --shadow:        rgba(0,0,0,0.65);
+  --shadow-accent: rgba(108, 99, 255, 0.15);
+
+  --font-display: 'Syne', sans-serif;
+  --font-mono:    'Space Mono', monospace;
+
+  --nav-h:        4rem;
+  --container:    1140px;
+  --radius:       12px;
+  --radius-lg:    20px;
+
+  --t:            0.3s ease;
+  --t-slow:       0.6s ease;
+}
+
+/* ─── LIGHT THEME ────────────────────────────────────────────── */
+/* [data-theme="light"] {
+  --bg:            #f3f3fb;
+  --bg-2:          #eaeaf6;
+  --bg-3:          #ddddf0;
+  --bg-card:       #ffffff;
+  --border:        rgba(0,0,0,0.07);
+  --border-hover:  rgba(108, 99, 255, 0.45);
+  --text-primary:  #0c0c1e;
+  --text-secondary:#4a4a72;
+  --text-muted:    #9898b8;
+  --shadow:        rgba(0,0,0,0.10);
+  --shadow-accent: rgba(108, 99, 255, 0.12);
+  --accent:        #5248e8;
+  --accent-dim:    #3d35c4;
+  --accent-glow:   rgba(82, 72, 232, 0.12);
+} */
+
+/* ─── Cyan CSS VARIABLES ─────────────────────────────────────────── */
 :root {
-  /* Accent */
   --accent:        #00e5ff;
   --accent-dim:    #00b8cc;
   --accent-glow:   rgba(0, 229, 255, 0.15);
 
-  /* Dark theme (default) */
   --bg:            #0a0a0f;
   --bg-2:          #10101a;
   --bg-3:          #16162a;
@@ -26,17 +72,14 @@
   --shadow:        rgba(0,0,0,0.6);
   --shadow-accent: rgba(0, 229, 255, 0.12);
 
-  /* Typography */
   --font-display: 'Syne', sans-serif;
   --font-mono:    'Space Mono', monospace;
 
-  /* Sizes */
   --nav-h:        4rem;
   --container:    1140px;
   --radius:       12px;
   --radius-lg:    20px;
 
-  /* Transitions */
   --t:            0.3s ease;
   --t-slow:       0.6s ease;
 }
@@ -333,7 +376,7 @@ input, textarea { font-family: inherit; }
   margin-bottom: 0.75rem;
 }
 .home__name {
-  font-size: clamp(2.2rem, 10vw, 5.5rem);
+  font-size: clamp(2.4rem, 8vw, 5rem);
   font-weight: 800;
   line-height: 1;
   margin-bottom: 1.25rem;
